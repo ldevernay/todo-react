@@ -37,7 +37,7 @@ class Board extends Component {
   }
   render() {
     return (
-      <div key="board" className="board">
+      <div className="container-fluid">
       {this.state.board.lists.map(list => this.renderList(list))}
       </div>
     );

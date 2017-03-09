@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 class Task extends Component {
   render(){
     return (
-      <li className="task">
+      <button type="button" className="btn btn-info">
       {this.props.name}
-      </li>
+      </button>
+      // <li className="task">
+      // {this.props.name}
+      // </li>
     );
   }
 }
