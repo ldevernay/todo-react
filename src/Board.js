@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import List from './List';
 
+var shortid = require('shortid');
+
 const default_board = {
   lists: [
     {
-    key: 1,
+    key: shortid.generate(),
     name: "liste_1",
     tasks: [
-      {key: "1-1", name: "Ecrire du code"},
-      {key: "1-2", name: "Corriger du code"},
-      {key: "1-3", name: "Relire du code"}
+      {key: shortid.generate(), name: "Ecrire du code"},
+      {key: shortid.generate(), name: "Corriger du code"},
+      {key: shortid.generate(), name: "Relire du code"}
     ]
   },
   {
-    key: 2,
+    key: shortid.generate(),
     name: "liste_2",
     tasks: [
-      {key: "2-1", name: "Manger"},
-      {key: "2-2", name: "Boire"},
-      {key: "2-3", name: "Dormir"}
+      {key: shortid.generate(), name: "Manger"},
+      {key: shortid.generate(), name: "Boire"},
+      {key: shortid.generate(), name: "Dormir"}
     ]
   }
 ]};
@@ -31,11 +33,11 @@ class Board extends Component {
     };
   }
   renderList(liste){
-    return <List list={liste}/>;
+    return <List key={liste.key} name={liste.name} tasks={liste.tasks}/>;
   }
   render() {
     return (
-      <div className="board">
+      <div key="board" className="board">
       {this.state.board.lists.map(list => this.renderList(list))}
       </div>
     );
