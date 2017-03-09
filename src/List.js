@@ -7,15 +7,10 @@ class List extends Component {
     return <Task task={task} onClick={() => this.props.onClick(task.key)} />;
   }
   render() {
-    let tasks = (() =>{
-      for (var task of this.props.list.tasks) {
-        this.renderTask(task)
-      }
-    });
     return (
       <div className="list">
       <div>{this.props.list.name}</div>
-      <ul>{tasks}</ul>
+      <ul>{this.props.list.tasks.map(task => this.renderTask(task))}</ul>
       </div>
     );
   }
