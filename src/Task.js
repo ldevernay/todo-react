@@ -3,23 +3,16 @@ import React, { Component } from 'react';
 class Task extends Component {
   render(){
     return (
+      <div className="row">
+      <div className="col-xs-6 col-md-4 text-center">
       <button type="button" className="btn btn-info">
       {this.props.name}
       </button>
-      // <li className="task">
-      // {this.props.name}
-      // </li>
+      </div>
+      </div>
     );
   }
 }
-// function Task(props) {
-//   return (
-//     <li key={this.props.key} className="task">
-//       {this.props.name}
-//     </li>
-//   );
-// }
 
 
 export default Task;
-// onClick={() => props.onClick()}>
